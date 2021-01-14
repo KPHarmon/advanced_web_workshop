@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+	<head>
+		{% block head %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='/css/profile.css') }}">
+		<link rel="icon" type="image/png" href="{{ url_for('static', filename='/misc/favicon.png') }}">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		<title>Hack3r Forums</title>
+		{% endblock %}
+	</head>
+
+	<body>
+		<div id="content">{% block content %}{% endblock %}</div>
+	</body>
+</html>

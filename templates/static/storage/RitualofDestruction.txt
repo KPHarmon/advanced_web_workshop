@@ -1,0 +1,16 @@
+ ̷̀̊̈́͜ ̴̪̲̗̓̈́̎͜͝ ̸̡̼̙̗͚̀̓ ̵̢͔̝͍̘̃̆ͅ ̵̧͙͊̈̍̔̓Ritual of Destruction̵̛̪͉̰̗̠̳̫̽̇́̇͜͠ ̶̛̰͖͙̽̏̑͝ ̶̤̥̓̈́́̽̊̓͑͘ ̵̝̳̯̟̠͕͕̲́̿̚ ̷̣̈́
+
+Ingredients:		API Key:
+ - 5 Pints of Blood	[blood]
+ - 10 Bat Wings		[wings]
+ - 2 Pounds of Flesh	[flesh]
+ - Red Paint		[paint]
+ - 10 Candles		[candles]
+
+Incantation:
+[Redacted]
+
+Note: An API has been implemented to check the status of the ingredients.
+      Example Usage: /status/[API Key]
+
+broncosec{fear_no_evil}

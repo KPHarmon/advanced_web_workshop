@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<div class="container" style="height: 100%; display: flex; align-items: center;">
+	<div class="card" style="width: 40%; margin:auto;"><center>
+		<img class="card-img-top" src="https://www.pngitem.com/pimgs/m/501-5012246_skull-png-download-royalty-free-skull-transparent-png.png" alt="Login">
+		<div class="card-body">
+    			<h5 class="card-title" style="font-size: 30px;"><b>Login</b></h5>
+    				<p class="card-text">
+					<form action="/" method="post">
+        				<input type="text" style="margin:5px;" placeholder="Username" name="username" value="{{request.form.username }}">
+         				<input type="password" style="margin:5px;" placeholder="Password" name="password" value="{{request.form.password }}">
+					<input class="btn btn-danger" type="submit" value="Login" style="margin:5px;">
+					</form>
+				</p>
+				{% if msg %}
+				{% for line in msg %}
+				<p class="error">{{line}}</p>
+				{% endfor %}
+				{% endif %}
+		</div>
+	</center>
+	</div>
+</div>
+
+{% endblock %}

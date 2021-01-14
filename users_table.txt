@@ -1,0 +1,14 @@
+create table users (
+	id INT,
+	username VARCHAR(50),
+	password VARCHAR(50),
+	ip_address VARCHAR(20),
+	is_admin VARCHAR(50)
+);
+insert into users (id, username, password, ip_address, is_admin) values (1, 'vjury0', 'BDygBUuLhtg', '129.222.23.153', false);
+insert into users (id, username, password, ip_address, is_admin) values (2, 'abillsberry1', 'gvtFcVZ', '105.123.255.78', false);
+insert into users (id, username, password, ip_address, is_admin) values (3, 'fstienton2', 'ltAZv7f1v', '44.32.196.190', false);
+insert into users (id, username, password, ip_address, is_admin) values (4, 'crounds3', 'niBhfz33d5', '122.239.45.52', true);
+insert into users (id, username, password, ip_address, is_admin) values (5, 'bvandervelden4', 'a6RWU9', '91.147.180.176', false);
+insert into users (id, username, password, ip_address, is_admin) values (6, 'gcathee5', '4u87PKG', '171.153.88.59', false);
+insert into users (id, username, password, ip_address, is_admin) values (7, 'mmaunder6', 'eLgEuOy', '131.194.145.111', false);
