@@ -24,24 +24,46 @@ def destroy_database(table_name):
 	conn.close()
 	
 
-def generate_database():
+def generate_database(table_name):
 	conn = initialize_connection()
 	curs = conn.cursor()
 	
 	# Generate Users
-	with open('users_table.txt', 'r') as file:
+	data_file = table_name + "_table.txt"
+	with open(data_file, 'r') as file:
 		data = file.read().replace('\n', '')
 	curs.execute(data)
 	conn.commit()
-	
-	#Generate Messages
-		
 	conn.close()
 
 
 def query_username(username, password):
 	
 	query = "SELECT * FROM users WHERE username='{}' AND password='{}';".format(username, password)
+	conn = initialize_connection()
+	cur = conn.cursor()
+	cur.execute(query)
+	rows = cur.fetchall()
+	conn.close()
+
+	return rows
+
+
+
+def query_username(username, password):
+	
+	query = "SELECT * FROM users WHERE username='{}' AND password='{}';".format(username, password)
+	conn = initialize_connection()
+	cur = conn.cursor()
+	cur.execute(query)
+	rows = cur.fetchall()
+	conn.close()
+
+	return rows
+
+def query_posts(message):
+	
+	query = "INSERT INTO posts (message_id, time_posted, author, post) values (101, '01/14/2020', 'crounds3', '{}') RETURNING post;".format(message)
 	conn = initialize_connection()
 	cur = conn.cursor()
 	cur.execute(query)

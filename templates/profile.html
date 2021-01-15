@@ -19,7 +19,7 @@
                      <!-- END profile-header-img -->
                      <!-- BEGIN profile-header-info -->
                      <div class="profile-header-info">
-                        <h2 class="m-t-10 m-b-5">{{ msg }}</h2>
+                        <h2 class="m-t-10 m-b-5">{{ usr }}</h2>
                         <i><p class="m-b-10">Professional Hack3r</p></i>
 			<p> 46 Posts </p>
                      </div>
@@ -89,15 +89,19 @@
                               <div class="timeline-comment-box">
                                  <div class="user"><img src="{{ url_for('static', filename='/misc/profile.png') }}"></div>
                                  <div class="input">
-                                    <form action="">
+                                    <form action="" method="post">
                                        <div class="input-group">
-                                          <input type="text" class="form-control rounded-corner" placeholder="Write a comment...">
+                                          <input type="text" class="form-control rounded-corner" placeholder="Write a comment..." id="comment" name="comment">
                                           <span class="input-group-btn p-l-10">
-                                          <button class="btn btn-primary f-s-12 rounded-corner" type="button">Comment</button>
-                                          </span>
+                                          <input class="btn btn-primary f-s-12 rounded-corner" type="submit" value="Message">
+					  </span>
                                        </div>
                                     </form>
-                                 </div>
+                                    {% if msg %}
+				    	<p> Comment Created! </p>
+					<p> Metadata: {{msg}} </p>
+                                    {% endif %}
+				</div>
                               </div>
                            </div>
                            <!-- end timeline-body -->
@@ -118,7 +122,7 @@
                            <div class="timeline-body">
                               <div class="timeline-header">
                                  <span class="userimage"><img src="{{ url_for('static', filename='/misc/profile.png') }}" alt=""></span>
-                                 <span class="username">{{ msg }}</span>
+                                 <span class="username">{{ usr }}</span>
                                  <span class="pull-right text-muted">7 Views</span>
                               </div>
                               <div class="timeline-content">
@@ -172,7 +176,7 @@
                            <div class="timeline-body">
                               <div class="timeline-header">
                                  <span class="userimage"><img src="{{ url_for('static', filename='/misc/profile.png') }}" alt=""></span>
-                                 <span class="username">{{ msg }}</span>
+                                 <span class="username">{{ usr }}</span>
                                  <span class="pull-right text-muted">17 Views</span>
                               </div>
                               <div class="timeline-content">

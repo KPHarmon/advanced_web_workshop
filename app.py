@@ -23,7 +23,7 @@ def index():
 
 		elif request.form['username'] == "crounds3" and request.form['password'] == "niBhfz33d5":
 			msg = request.form['username']
-			resp = redirect(url_for('profile', profile_id='823759'))
+			resp = redirect(url_for('profile'))
 		else:
 			msg = ["Incorrect Password"]
 			resp = make_response(render_template('login.html', msg=msg))
@@ -34,17 +34,26 @@ def index():
 		resp = make_response(render_template('login.html', msg=msg))
 		return resp
 
-@app.route('/profile/<profile_id>', methods=['GET', 'POST'])
-def profile(profile_id):
-	msg = 'crounds3'
-	return make_response(render_template('profile.html', msg=msg))
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+	
+	usr = 'crounds3'
+		
+	if request.method == 'POST':
+		post = request.form['comment']
+		data = query_posts(post)
+			
+		if post == "":
+			msg = None
+		else:
+			msg = data
+		resp = make_response(render_template('profile.html', msg=msg, usr=usr))
+		return resp
 
-
-# Javascript Challenge
-@app.route('/messages/<chat_room>')
-def storage(book):
-	return app.send_static_file('storage/' + book)
+	elif request.method == 'GET':
+		msg = None
+	return render_template('profile.html', msg=msg, usr=usr)
 
 
 if __name__ == '__main__':
-	app.run(debug=False)
+	app.run(debug = True)
